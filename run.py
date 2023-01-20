@@ -1,3 +1,10 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+
+
+def main():
+    player_name = input("Welcome to Bulls and Calves!\nPlease enter your name: ")
+    print(f"Hello {player_name}, please read the instructions to know how to play the game!")
+
+    user_input = input("Enter your guess: ")
+    print(user_input)
+
+main()

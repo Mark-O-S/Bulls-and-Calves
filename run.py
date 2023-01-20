@@ -1,3 +1,8 @@
+# NUMBERS const will be used to generate the game code
+NUMBERS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+def generate_code():
+    pass
 
 
 def main():

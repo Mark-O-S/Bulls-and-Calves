@@ -7,3 +7,5 @@ When I wanted to use a list of strings, I was still using the input I got from t
 user_input = input("Enter your guess: ")
 list_user_input = list(user_input)
 valid_user_code = validate_user_code_guess(user_input, difficulty_level)
+
+Was trying to compare two interger types when thet were an integer and a string. The string was an input from the user and wasn't converted to an integer type. Fixed the issue by using the int() function to then convert the value to an integer type.

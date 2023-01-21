@@ -22,7 +22,6 @@ def validate_user_code_guess(user_code_guess, code_length):
         if not digit.isdigit():
             return False
 
-
         if int(digit) < 0:
             return False
 
@@ -31,6 +30,24 @@ def validate_user_code_guess(user_code_guess, code_length):
         return False
     
     return True
+# check if the user input contains a bull or a calf
+def check_for_bull_or_calf(list_user_input, game_code):
+    # counters for bulls and calves 
+    bulls = 0
+    calves = 0
+    # loop through the indices of the user input list and ensure user inputs are converted as integers
+    for index in range(len(list_user_input)):
+        if int(list_user_input[index]) in game_code:
+            if int(list_user_input[index]) == game_code[index]:
+                bulls += 1
+            else:
+                calves += 1
+    
+    print(f"You got {bulls} bulls and {calves} calves! ")
+    if bulls == (len(list_user_input)):
+        return True
+
+    return False
 
 def main():
     print("Welcome to Bulls and Calves!\n")
@@ -66,6 +83,12 @@ def main():
         # If the user_code_guess is not valid
         if not valid_user_code_guess:
             print(f"Invalid guess, please enter a {difficulty_level} digit unique number")
-    
+        
+        # if the user code guess is valid
+        else:
+            check_bulls_calves = check_for_bull_or_calf(list_user_input, game_code)
+            if check_bulls_calves:
+                guessing_game_code = True
+    print("Congratulations! You won the game!!")
 
 main()

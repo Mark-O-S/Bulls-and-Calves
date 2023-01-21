@@ -5,7 +5,7 @@ NUMBERS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
 # random.sample to generate random unique numbers
-def generate_code(code_length):
+def generate_game_code(code_length):
     return random.sample(NUMBERS, code_length)
 
 
@@ -33,7 +33,7 @@ def main():
 
 
     # This will generate a random code used by the game
-    game_code = generate_code(int(difficulty_level))
+    game_code = generate_game_code(int(difficulty_level))
 
 
     user_input = input("Enter your guess: ")

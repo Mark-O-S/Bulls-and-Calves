@@ -30,6 +30,7 @@ def validate_user_code_guess(user_code_guess, code_length):
         return False
     
     return True
+    
 # check if the user input contains a bull or a calf
 def check_for_bull_or_calf(list_user_input, game_code):
     # counters for bulls and calves 
@@ -67,10 +68,14 @@ def main():
         # Check if the game difficulty provided is not valid and if not send a message to choose one of the options
         if not valid_difficulty:
             print("You provided an invalid game difficulty - please choose one of the options below")
+        
+        if valid_difficulty:
+            print(f"You have chosen difficulty level: {difficulty_level} digits.\nGood luck!")
 
 
     # This will generate a random code used by the game
     game_code = generate_game_code(difficulty_level)
+    # TO DO - Remove print(game_code)
     print(game_code)
 
     # Create while loop to keep the user guessing until they guess the game code correctly
@@ -89,6 +94,7 @@ def main():
             check_bulls_calves = check_for_bull_or_calf(list_user_input, game_code)
             if check_bulls_calves:
                 guessing_game_code = True
-    print("Congratulations! You won the game!!")
+    print(f"Congratulations {player_name}! You guessed all the numbers correctly!!!")
 
+    # Note to self - create an option for user to play again or not
 main()

@@ -14,6 +14,9 @@ def validate_game_difficulty(game_difficulty):
         return True
     return False
 
+def validate_user_code_guess(user_code_guess, code_length):
+    print(user_code_guess)
+
 
 def main():
     print("Welcome to Bulls and Calves!\n")
@@ -34,10 +37,14 @@ def main():
 
     # This will generate a random code used by the game
     game_code = generate_game_code(int(difficulty_level))
+    print(game_code)
 
-
-    user_input = input("Enter your guess: ")
-    print(user_input)
-
+    # Create while loop to keep the user guessing until they guess the game code correctly
+    guessing_game_code = False
+    while not guessing_game_code:
+        user_input = input("Enter your guess: ")
+        list_user_input = list(user_input)
+        valid_user_code = validate_user_code_guess(list_user_input, difficulty_level)
+    
 
 main()

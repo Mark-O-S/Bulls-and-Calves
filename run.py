@@ -1,9 +1,12 @@
+import random
+
 # NUMBERS const will be used to generate the game code
 NUMBERS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-def generate_code():
-    pass
 
+# random.sample to generate random unique numbers
+def generate_code():
+    return random.sample(NUMBERS, 3)
 
 def main():
     print("Welcome to Bulls and Calves!\n")
@@ -11,6 +14,9 @@ def main():
     player_name = input("Please enter your name: ")
     print(f"Hello {player_name}, please make sure to read the instructions to know how to play!")
 
+    # This will generate a random code used by the game
+    game_code = generate_code()
+    print(game_code)
 
     user_input = input("Enter your guess: ")
     print(user_input)

@@ -30,7 +30,10 @@ def validate_user_code_guess(user_code_guess, code_length):
 
 def main():
     print("Welcome to Bulls and Calves!\n")
-    print("***How To Play***\nGuess the right number!\nIf a number is one of the correct digits and is in the correct position, it's a bull.\nIf a number is one of the correct digits but is in the incorrect position, it's a calf.\n")
+    print("***How To Play***\nGuess the right number!\nNote that you can only guess unique numbers from 0 - 9. Numbers cannot be repeated.")
+    print("If a number is one of the correct digits and is in the correct position, it's a bull.")
+    print("If a number is one of the correct digits but is in the incorrect position, it's a calf.")
+    print("Once you guess all Bull's you win the game!\n")
     player_name = input("Please enter your name: ")
     print(f"Hello {player_name}, please make sure to read the instructions to know how to play!\n")
     print("Choose your difficulty - How many digits would you like to guess? ")

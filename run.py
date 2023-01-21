@@ -17,8 +17,12 @@ def validate_game_difficulty(game_difficulty):
 # validate the users guess by checking that the digits are unique and are whole numbers
 def validate_user_code_guess(user_code_guess, code_length):
 
-    #Checks that each digit is not a negative
+    # Checks that each input is not a digit and is a negative
     for digit in user_code_guess:
+        if not digit.isdigit():
+            return False
+
+
         if int(digit) < 0:
             return False
 
@@ -61,7 +65,7 @@ def main():
 
         # If the user_code_guess is not valid
         if not valid_user_code_guess:
-            print(f"Please enter a {difficulty_level} digit unique number")
+            print(f"Invalid guess, please enter a {difficulty_level} digit unique number")
     
 
 main()

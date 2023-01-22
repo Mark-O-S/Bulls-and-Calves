@@ -18,7 +18,7 @@ def validate_game_difficulty(game_difficulty):
     """
     This function will validate the game in any chosen difficulty
     """
-    if game_difficulty in [2, 3, 4]:
+    if game_difficulty in ["2", "3", "4"]:
         return True
     return False
 
@@ -66,6 +66,10 @@ def check_for_bull_or_calf(list_user_input, game_code):
 
     return False
 
+yeslist = ["yes", "y", "ya", "yeah", "yep"]
+"""
+Allows the program to accept different types of 'yes' responses.
+"""
 
 def main():
     """
@@ -80,13 +84,13 @@ def main():
     print("If a number is one of the correct digits but is in the incorrect position, it's a calf.")
     print("Once you guess all Bull's you win the game!\n")
     player_name = input("Please enter your name: ")
-    print(f"Hello {player_name}! Choose your difficulty - How many digits would you like to guess?\n")
-    #print("Choose your difficulty - How many digits would you like to guess? ")
+    print(f"Hello {player_name}! Choose your difficulty below - How many digits would you like to guess?\n")
+  
     
     # Validate difficulty set by user - Keep prompting user until they provide one of the expected difficulties.
     valid_difficulty = False
     while not valid_difficulty:
-        difficulty_level = int(input("Options are 2, 3 or 4\n"))
+        difficulty_level = input("Options are 2, 3 or 4\n")
         valid_difficulty = validate_game_difficulty(difficulty_level)
 
         # Check if the game difficulty provided is not valid and if not send a message to choose one of the options
@@ -94,6 +98,7 @@ def main():
             print("You provided an invalid game difficulty - please choose one of the options below")
         
         if valid_difficulty:
+            difficulty_level = int(difficulty_level)
             print(f"You have chosen difficulty level: {difficulty_level} digits.\nGood luck!")
 
     
@@ -124,7 +129,7 @@ def main():
 
     # Note to self - create an option for user to play again or not
     restart = input("Would you like to play again?\nIf so, type 'Yes' if not, type any other word: ").lower()
-    if restart == "yes":
+    if restart in yeslist:
         main()
     else:
         print(f"Thank you {player_name}, for playing!")

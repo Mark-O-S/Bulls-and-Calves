@@ -51,6 +51,7 @@ def check_for_bull_or_calf(list_user_input, game_code):
     # counters for bulls and calves 
     bulls = 0
     calves = 0
+    
     # loop through the indices of the user input list and ensure user inputs are converted as integers
     for index in range(len(list_user_input)):
         if int(list_user_input[index]) in game_code:
@@ -67,8 +68,13 @@ def check_for_bull_or_calf(list_user_input, game_code):
 
 
 def main():
-    print("Welcome to Bulls and Calves!\n")
-    print("***How To Play***\nGuess the right code!\nNote that you can only guess unique numbers from 0 - 9.")
+    """
+    This is the main function that executes the program.
+    """
+    print("-----------------------------")
+    print("WELCOME TO BULLS AND CALVES!")
+    print("-----------------------------")
+    print("***HOW TO PLAY***\nGuess the right code!\nNote that you can only guess unique numbers from 0 - 9.")
     print("Numbers cannot be repeated each time you enter a guess, for example: entering '111' or '121' will be invalid.")
     print("If a number is one of the correct digits and is in the correct position, it's a bull.")
     print("If a number is one of the correct digits but is in the incorrect position, it's a calf.")

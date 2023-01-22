@@ -4,27 +4,30 @@ import random
 NUMBERS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
-"""
-This function is used to generate the code for the game.
-random.sample is used to generate unique random numbers that 
-the user will try to guess to win the game.
-"""
+
 def generate_game_code(code_length):
+    """
+    This function is used to generate the code for the game.
+    random.sample is used to generate unique random numbers that 
+    the user will try to guess to win the game.
+    """ 
     return random.sample(NUMBERS, code_length)
 
-"""
-This function will validate the game in any chosen difficulty
-"""
+
 def validate_game_difficulty(game_difficulty):
+    """
+    This function will validate the game in any chosen difficulty
+    """
     if game_difficulty in [2, 3, 4]:
         return True
     return False
 
-"""
-This function will validate the user guess by checking that the users input are
-unique numbers between 0 - 9.
-"""
+
 def validate_user_code_guess(user_code_guess, code_length):
+    """
+    This function will validate the user guess by checking that the users input are
+    unique numbers between 0 - 9.
+    """
 
     # Checks that each input is not a digit and is a negative
     for digit in user_code_guess:
@@ -40,10 +43,11 @@ def validate_user_code_guess(user_code_guess, code_length):
     
     return True
     
-"""
-This will check if the user input contains a bull or a calf
-"""
+
 def check_for_bull_or_calf(list_user_input, game_code):
+    """
+    This will check if the user input contains a bull or a calf
+    """
     # counters for bulls and calves 
     bulls = 0
     calves = 0
@@ -61,17 +65,17 @@ def check_for_bull_or_calf(list_user_input, game_code):
 
     return False
 
-# Note to self - create an option for user to play again or not
 
 def main():
     print("Welcome to Bulls and Calves!\n")
-    print("***How To Play***\nGuess the right number!\nNote that you can only guess unique numbers from 0 - 9. Numbers cannot be repeated.")
+    print("***How To Play***\nGuess the right code!\nNote that you can only guess unique numbers from 0 - 9.")
+    print("Numbers cannot be repeated each time you enter a guess, for example: entering '111' or '121' will be invalid.")
     print("If a number is one of the correct digits and is in the correct position, it's a bull.")
     print("If a number is one of the correct digits but is in the incorrect position, it's a calf.")
     print("Once you guess all Bull's you win the game!\n")
     player_name = input("Please enter your name: ")
-    print(f"Hello {player_name}, please make sure to read the instructions to know how to play!\n")
-    print("Choose your difficulty - How many digits would you like to guess? ")
+    print(f"Hello {player_name}! Choose your difficulty - How many digits would you like to guess?\n")
+    #print("Choose your difficulty - How many digits would you like to guess? ")
     
     # Validate difficulty set by user - Keep prompting user until they provide one of the expected difficulties.
     valid_difficulty = False
@@ -86,9 +90,11 @@ def main():
         if valid_difficulty:
             print(f"You have chosen difficulty level: {difficulty_level} digits.\nGood luck!")
 
-
-    # This will generate a random code used by the game
+    
     game_code = generate_game_code(difficulty_level)
+    """
+    This will generate a random code used by the game
+    """
     # TO DO - Remove print(game_code)
     print(game_code)  
 
@@ -99,7 +105,7 @@ def main():
         list_user_input = list(user_input)
         valid_user_code_guess = validate_user_code_guess(list_user_input, difficulty_level)
 
-        # If the user_code_guess is not valid
+        # If the user_code_guess is not valid  
         if not valid_user_code_guess:
             print(f"Invalid guess, please enter a {difficulty_level} digit unique number")
         
@@ -111,6 +117,12 @@ def main():
     print(f"Congratulations {player_name}! You guessed all the numbers correctly!!!")
 
     # Note to self - create an option for user to play again or not
-    
+    restart = input("Would you like to play again?\nIf so, type 'Yes' if not, type any other word: ").lower()
+    if restart == "yes":
+        main()
+    else:
+        print(f"Thank you {player_name}, for playing!")
+        exit()
 
-main()
+if __name__ == '__main__':
+    main()

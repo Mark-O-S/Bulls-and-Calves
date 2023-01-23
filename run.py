@@ -84,7 +84,9 @@ def main():
     print("If a number is one of the correct digits but is in the incorrect position, it's a calf.")
     print("The difficulty level is gauged by how many digits you are guessing.\n2 digits being the easiest and 4 digits being the hardest.")
     print("Once you guess all Bull's you win the game!\n")
+
     player_name = input("Please enter your name: ")
+
     print(f"\nHello {player_name}! Please choose your level of difficulty below:\n")
 
     player_wins = 0
@@ -94,7 +96,9 @@ def main():
         # Validate difficulty set by user - Keep prompting user until they provide one of the expected difficulties.
         valid_difficulty = False
         while not valid_difficulty:
+
             difficulty_level = input("Would you like to guess 2, 3 or 4 digits?\n")
+
             valid_difficulty = validate_game_difficulty(difficulty_level)
 
             # Check if the game difficulty provided is not valid and if not send a message to choose one of the options.
@@ -114,7 +118,9 @@ def main():
         # Create while loop to keep the user guessing until they guess the game code correctly.
         guessing_game_code = False
         while not guessing_game_code:
+
             user_input = input("\nEnter your guess: ")
+
             list_user_input = list(user_input)
             valid_user_code_guess = validate_user_code_guess(list_user_input, difficulty_level)
 
@@ -132,6 +138,7 @@ def main():
 
 
         restart = input("Would you like to play again?\nIf so, type 'Yes'. If not, type any other word: ").lower()
+        
         if restart in yeslist:
             guessing_game_code = True
         else:

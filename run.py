@@ -1,6 +1,6 @@
 import random
 
-"""NUMBERS const will be used to help generate the game code."""
+# NUMBERS const will be used to help generate the game code.
 NUMBERS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 # Allows the program to accept different types of 'yes' responses.
@@ -49,7 +49,7 @@ def check_for_bull_or_calf(list_user_input, game_code):
     """
     This will check if the user input contains a bull or a calf.
     """
-    # counters for bulls and calves 
+    # Counters for bulls and calves 
     bulls = 0
     calves = 0
     
@@ -75,7 +75,7 @@ def main():
     print("-----------------------------")
     print("WELCOME TO BULLS AND CALVES!")
     print("-----------------------------")
-    print("***HOW TO PLAY***\nGuess the right code!\nNote that you can only guess unique numbers from 0 - 9.") # noqa
+    print("***HOW TO PLAY***\nGuess the right code!\nNote that you can only guess unique numbers from 0 - 9.") 
     print("Numbers cannot be repeated each time you enter a guess, for example: entering '111' or '121' will be invalid.")
     print("If a number is one of the correct digits and is in the correct position, it's a bull.")
     print("If a number is one of the correct digits but is in the incorrect position, it's a calf.")
@@ -87,7 +87,6 @@ def main():
     print(f"\nHello {player_name}! Please choose your level of difficulty below:\n")
 
     player_wins = 0
-    
     while True:
 
         # Validate difficulty set by user - Keep prompting user until they provide one of the expected difficulties.
@@ -101,14 +100,11 @@ def main():
             # Check if the game difficulty provided is not valid and if not send a message to choose one of the options.
             if not valid_difficulty:
                 print("You provided an invalid game difficulty - please choose one of the options below:")
-        
             if valid_difficulty:
                 difficulty_level = int(difficulty_level)
                 print(f"You have chosen difficulty level: {difficulty_level} digits.\nGood luck!")
-        
         # This will generate a random code used by the game      
         game_code = generate_game_code(difficulty_level)
-        print(game_code)
 
         # Create while loop to keep the user guessing until they guess the game code correctly.
         guessing_game_code = False
@@ -122,7 +118,6 @@ def main():
             # If the user_code_guess is not valid.
             if not valid_user_code_guess:
                 print(f"Invalid guess, please enter a {difficulty_level} digit unique number")
-        
             # if the user code guess is valid.
             else:
                 check_bulls_calves = check_for_bull_or_calf(list_user_input, game_code)

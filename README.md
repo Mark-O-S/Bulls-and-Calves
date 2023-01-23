@@ -1,3 +1,12 @@
+# Bulls and Calves
+
+Bulls and Calves is a Python terminal game that runs on Code Institute's mock terminal in Heroku.
+
+This is a fun game in which the game generates a random 2, 3 or 4 digit number, depending on their chosen difficulty.
+The player then chooses to guess the numbers in which the game prompts "bulls" or "calves" if the user guesses the numbers correctly or is partially correct. This will test the users problem solving skills and logical thinking.
+
+[Live version of Bulls and Calves game](https://bulls-and-calves.herokuapp.com/)
+
 What went wrong:
 
 When attempting to generate 3 unique digits, I called the random module directly.

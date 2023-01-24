@@ -109,6 +109,45 @@ Player get all digits correct | User is congratulated and asks if they want to p
 After guessing the numbers correctly, user chooses to play again | The user is prompted to choose the difficulty again and then continue the next round of guessing | As expected | Pass
 After guessing the numbers correctly and not choosing to play again | The game thanks the user and displays how many times they guessed the numbers correctly | As expected | Pass
 
+### Invalid Inputs
+
+Input | Expected Result | Actual Result | Pass/Fail
+---------------|-----------------|--------------|-------------
+When promted to choose difficulty, input a letter, word, symbol and any number besides 2, 3 or 4 | Receive a message saying "invalid game difficulty" and prompt user to select from 2, 3 or 4 | As expected | Pass
+When prompted to enter users guess, input letters, words, symbols and more digits than required | Receive a message saying "Invalid guess" and the game tells user to input a unique number | As expected | Pass
+
+### Bugs
+What went wrong:
+
+When attempting to generate 3 unique digits, I called the random module directly.
+I received "TypeError: 'module' object is not callable"
+To fix this, I used random.sample() function to generate unique numbers for the game.
+
+When I wanted to use a list of strings, I was still using the input I got from the user. I expected a list of strings but instead I got a string.
+user_input = input("Enter your guess: ")
+list_user_input = list(user_input)
+valid_user_code = validate_user_code_guess(user_input, difficulty_level)
+
+Was trying to compare two interger types when thet were an integer and a string. The string was an input from the user and wasn't converted to an integer type. Fixed the issue by using the int() function to then convert the value to an integer type.
+
+I had an issue with validating the game difficulty. The issue was when the game requests to input difficulty, if the user inputs a word or a letter, it should print out (...invalid game difficulty). However, there is a ValueError instead. The program is looking for an integer number of 2, 3 or 4. I updated it so that the program will accept 2, 3 or 4 as a string if the user enters either of this number. After implementing the new code. The game works.
+
+## Validator Testing
+
+[PEP8CI](https://pep8ci.herokuapp.com/) was used to check if there were any errors. Below is the result.
+
+![](/assets/pep8-result.jpg)
+
+- I received an error at line 156 of my code stating "E501 line too long"
+- I was unable to remove this error due to it being part of me else statement for validating the users input.
+
+![](/assets/pep8-result-main.jpg)
+
+- In line 181 states ("W292 no newline at end of file")
+- I removed this error by placing a new line at the end of the file.
+
+![](/assets/code-testing-result.jpg)
+- Above is the result of my last PEP8CI test for code. I am unable to remove the error of line 156 due to id being a necessary code that I cannot change.
 
 # Deployment 
 
@@ -129,17 +168,3 @@ The game was deployed on Heroku. The following steps were used to deploy the gam
   - Below you will see your app was successfully deployed with a view button below this that will take you to the URL of your deployed app.
 
 
-What went wrong:
-
-When attempting to generate 3 unique digits, I called the random module directly.
-I received "TypeError: 'module' object is not callable"
-To fix this, I used random.sample() function to generate unique numbers for the game.
-
-When I wanted to use a list of strings, I was still using the input I got from the user. I expected a list of strings but instead I got a string.
-user_input = input("Enter your guess: ")
-list_user_input = list(user_input)
-valid_user_code = validate_user_code_guess(user_input, difficulty_level)
-
-Was trying to compare two interger types when thet were an integer and a string. The string was an input from the user and wasn't converted to an integer type. Fixed the issue by using the int() function to then convert the value to an integer type.
-
-I had an issue with validating the game difficulty from 116 - 22 and line 94 - 105. The issue was when the game requests to input difficulty, if the user inputs a word or a letter, it should print out (...invalid game difficulty). However, there is a ValueError instead. The program is looking for an integer number of 2, 3 or 4. I updated it so that the program will accept 2, 3 or 4 as a string if the user enters either of this number. After implementing the new code. The game works.

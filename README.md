@@ -154,7 +154,7 @@ I had an issue with validating the game difficulty. The issue was when the game 
 - I removed this error by placing a new line at the end of the file.
 
 ![](/assets/code-testing-result.jpg)
-- Above is the result of my last PEP8CI test for code. I am unable to remove the error of line 156 due to id being a necessary code that I cannot change.
+- Above is the result of my last PEP8CI test for code. I am unable to remove the error of line 156 due to it being a necessary code that I cannot change.
 
 **[Back to Table of Contents](#table-of-contents)**
 

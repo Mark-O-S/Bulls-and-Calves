@@ -16,6 +16,9 @@ The player then chooses to guess the numbers in which the game prompts "bulls" o
 - [Technologies Used](#technologies-used)
 - [Testing](#testing)
 - [Deployment](#deployment)
+- [Credits](#credits)
+
+
 
 # **User Experience (UX)**
 
@@ -85,6 +88,8 @@ I created a flowchart by using [Lucid](https://lucid.co/) in order to map out wh
 - Create an optional feature so that the user could play against a bot to guess the numbers also.
 - Make the game more visually pleasing by including different colours and drawing the name of the game instead of just plain text.
 
+**[Back to Table of Contents](#table-of-contents)**
+
 # Technologies Used 
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - For building the game.
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Generated from the python essentials template created by Code Institute.
@@ -93,6 +98,8 @@ I created a flowchart by using [Lucid](https://lucid.co/) in order to map out wh
 - [Gitpod](https://www.gitpod.io) - To write all the python. Also used to write the README.
 - [CI Github template](https://github.com/Code-Institute-Org/python-essentials-template) - Used to help create the terminal that displays for users on the live page.
 - [Code Beautify](https://codebeautify.org/python-formatter-beautifier) - To aid me in formatting my Python code.
+
+**[Back to Table of Contents](#table-of-contents)**
 
 # Testing
 
@@ -149,6 +156,8 @@ I had an issue with validating the game difficulty. The issue was when the game 
 ![](/assets/code-testing-result.jpg)
 - Above is the result of my last PEP8CI test for code. I am unable to remove the error of line 156 due to id being a necessary code that I cannot change.
 
+**[Back to Table of Contents](#table-of-contents)**
+
 # Deployment 
 
 The game was deployed on Heroku. The following steps were used to deploy the game to Heroku:
@@ -167,4 +176,15 @@ The game was deployed on Heroku. The following steps were used to deploy the gam
   - To deploy manually go to the Manual deploy section below and click Deploy Branch. Just remember you will need to do this every time you make a change to your code on Github.
   - Below you will see your app was successfully deployed with a view button below this that will take you to the URL of your deployed app.
 
+**[Back to Table of Contents](#table-of-contents)**
 
+# Credits
+
+- Code Institute for the Python Gitpod template
+- Heroku as the platform to deploy my project
+- My partner for suggesting this game that we both like to play.
+- [Stack Overflow](https://stackoverflow.com/) for checking errors that I received while building this project.
+- [W3Schools](https://www.w3schools.com/) for being a secondary platform for me to go over certain types of code while trying to implement my code.
+
+
+**[Back to Table of Contents](#table-of-contents)**

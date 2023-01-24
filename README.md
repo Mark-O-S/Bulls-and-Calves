@@ -13,6 +13,9 @@ The player then chooses to guess the numbers in which the game prompts "bulls" o
 # ***Table of Contents***
 - [User Experience (UX)](#user-experience-ux)
 - [Design](#design)
+- [Technologies Used](#technologies-used)
+- [Testing](#testing)
+- [Deployment](#deployment)
 
 # **User Experience (UX)**
 
@@ -38,7 +41,7 @@ I created a flowchart by using [Lucid](https://lucid.co/) in order to map out wh
 ## Features
 ### Current features
 
-*Starting screen*
+### *Starting screen*
 
 ![](/assets/game-start-screen.jpg)
 - When the game starts up, it informs the user of what they are playing.
@@ -46,18 +49,18 @@ I created a flowchart by using [Lucid](https://lucid.co/) in order to map out wh
 - It also informs the user of the games difficulty levels.
 - It prompts the user to enter their name.
 
-*Choose difficulty*
+### *Choose difficulty*
 
 ![](/assets/choose-difficulty.jpg)
 - After user inputs their name they are asked to choose difficulty by choosing to guess either 2, 3 or 4 digits.
 
-*After choosing difficulty*
+### *After choosing difficulty*
 
 ![](/assets/difficulty-chosen.jpg)
 - After choosing difficulty, the program repeats the difficulty level chosen by the user. 
 - The user must then input their guess.
 
-*Playing Bulls and Calves*
+### *Playing Bulls and Calves*
 
 ![](/assets/no-bull-or-calf.jpg)
 - The above is displayed if the user does not get any number correct.
@@ -81,6 +84,50 @@ I created a flowchart by using [Lucid](https://lucid.co/) in order to map out wh
 ### Potential Future Improvements or Implementation
 - Create an optional feature so that the user could play against a bot to guess the numbers also.
 - Make the game more visually pleasing by including different colours and drawing the name of the game instead of just plain text.
+
+# Technologies Used 
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - For building the game.
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Generated from the python essentials template created by Code Institute.
+- [HTML5](https://en.wikipedia.org/wiki/HTML5) - Generated from the python essential template built by Code Institute.
+- [Github](https://github.com) - To save and store all the files of the site.
+- [Gitpod](https://www.gitpod.io) - To write all the python. Also used to write the README.
+- [CI Github template](https://github.com/Code-Institute-Org/python-essentials-template) - Used to help create the terminal that displays for users on the live page.
+- [Code Beautify](https://codebeautify.org/python-formatter-beautifier) - To aid me in formatting my Python code.
+
+# Testing
+
+## Manual Testing
+
+### Features
+
+Feature Tested | Expected Result | Actual Result | Pass/Fail
+---------------|-----------------|--------------|-------------
+Write name and press enter | Receive a message "Hello {name}! Please choose difficulty" and ask how many digits the user wants to guess | As expected | Pass
+When the user chooses either 2, 3 or 4 and press enter | The game repeats the users chosen difficulty and prompts user to enter guess | As expected | Pass
+User enters a numbered guess | The game will respond and inform the user the result of their guess | As expected | Pass
+Player get all digits correct | User is congratulated and asks if they want to play again | As expected | Pass
+After guessing the numbers correctly, user chooses to play again | The user is prompted to choose the difficulty again and then continue the next round of guessing | As expected | Pass
+After guessing the numbers correctly and not choosing to play again | The game thanks the user and displays how many times they guessed the numbers correctly | As expected | Pass
+
+
+# Deployment 
+
+The game was deployed on Heroku. The following steps were used to deploy the game to Heroku:
+
+  - Sign into Heroku.
+  - On the main dashboard choose to Create new app.
+  - Choose a unique name for your project and the region, based on where you are located (as I'm in Europe, I chose Europe), and then click on "Create app".
+  - Then go to the Settings tab.
+  - In Settings click on Reveal Config Vars and enter the following key: PORT and value: 8000.    
+  - Next scroll down to Buildpacks and click Add buildpack, choose Python first, then choose Node.js and then click "Save changes".
+  - Repeat the above step and select nodejs and click "Save changes".
+  - Next go to the Deploy tab.
+  - Under the Deployment method, choose GitHub and then click Connect to GitHub you will be prompted to sign into your GitHub.
+  - Then you can search for your GitHub repository, in my case this was "bulls-and-calves" and click connect.
+  - To deploy automatically you will need to select Enable Automatic Deploys which will rebuild the app every time you push a change to GitHub.
+  - To deploy manually go to the Manual deploy section below and click Deploy Branch. Just remember you will need to do this every time you make a change to your code on Github.
+  - Below you will see your app was successfully deployed with a view button below this that will take you to the URL of your deployed app.
+
 
 What went wrong:
 

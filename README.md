@@ -38,8 +38,47 @@ I created a flowchart by using [Lucid](https://lucid.co/) in order to map out wh
 ## Features
 ### Current features
 
+*Starting screen*
 
-## Potential Future Improvements or Implementation
+![](/assets/game-start-screen.jpg)
+- When the game starts up, it informs the user of what they are playing.
+- It tells the user how to play the game.
+- It also informs the user of the games difficulty levels.
+- It prompts the user to enter their name.
+
+*Choose difficulty*
+
+![](/assets/choose-difficulty.jpg)
+- After user inputs their name they are asked to choose difficulty by choosing to guess either 2, 3 or 4 digits.
+
+*After choosing difficulty*
+
+![](/assets/difficulty-chosen.jpg)
+- After choosing difficulty, the program repeats the difficulty level chosen by the user. 
+- The user must then input their guess.
+
+*Playing Bulls and Calves*
+
+![](/assets/no-bull-or-calf.jpg)
+- The above is displayed if the user does not get any number correct.
+
+![](/assets/0-bull-1-calf.jpg)
+- The above is displayed if the user guess a correct number but in the wrong position.
+
+![](/assets/1-bull-0-calf.jpg)
+- The above is displayed if the user guesses a correct number and also in the correct position.
+
+![](/assets/user-congrats.jpg)
+- The above is displayed once the user guesses all the numbers correctly.
+- The user is then asked if they would like to play again.
+
+![](/assets/finish-game-display-results.jpg)
+- If the user chooses not to play again after after guessing correctly, the program displays how many times they guessed correctly.
+
+![](/assets/finish-game-play-again.jpg)
+- If the user chooses to play again, they are redirected back to choose the difficulty and play again.
+
+### Potential Future Improvements or Implementation
 - Create an optional feature so that the user could play against a bot to guess the numbers also.
 - Make the game more visually pleasing by including different colours and drawing the name of the game instead of just plain text.
 
